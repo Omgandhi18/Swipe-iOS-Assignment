@@ -99,6 +99,7 @@ class AddProductViewModel: ObservableObject {
             
             if let encoded = try? JSONEncoder().encode(products) {
                 UserDefaults.standard.set(encoded, forKey: "offline_products")
+                UserDefaults.standard.synchronize()
             }
         }
 

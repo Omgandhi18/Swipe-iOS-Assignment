@@ -107,7 +107,7 @@ struct AddProductScreen: View {
             .navigationTitle("Add Product")
             .scrollDismissesKeyboard(.automatic)
             //alert when product saved successfully
-            .alert(viewModel.message ?? "Alert", isPresented: $viewModel.showAlert){
+            .alert(viewModel.message ?? "Product added successfully", isPresented: $viewModel.showAlert){
                 Button{
                     dismiss()
                 }label: {

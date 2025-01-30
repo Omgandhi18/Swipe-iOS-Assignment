@@ -52,15 +52,7 @@ struct ProductScreen: View {
                     }
 
                 }
-                .onAppear {
-                    viewModel.fetchProducts()
-                }
-                .fullScreenCover(isPresented: $showAddProductSheet){
-                    AddProductScreen()
-                }
-                .alert("Refresh to get newly added products",isPresented: $offlineProductAddAlert){
-                   
-                }
+                
             }
             else{
                 //MARK: Display when no internet connection
@@ -74,6 +66,12 @@ struct ProductScreen: View {
             }
             
             
+        }
+        .fullScreenCover(isPresented: $showAddProductSheet){
+            AddProductScreen()
+        }
+        .alert("Refresh to get newly added products",isPresented: $offlineProductAddAlert){
+           
         }
         .onAppear{
             NetworkManager.shared.onStatusChange = {isConnected in
