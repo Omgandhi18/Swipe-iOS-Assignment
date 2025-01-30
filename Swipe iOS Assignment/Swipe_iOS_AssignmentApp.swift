@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 @main
 struct Swipe_iOS_AssignmentApp: App {
     var body: some Scene {
